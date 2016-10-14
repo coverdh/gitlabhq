@@ -134,7 +134,7 @@ module ProjectsHelper
     options = project_feature_options
 
     if @project.private?
-      options.delete('Everyone with access')
+      options.delete('所有人可以访问')
       highest_available_option = options.values.max if @project.project_feature.send(field) == ProjectFeature::ENABLED
     end
 
@@ -430,9 +430,9 @@ module ProjectsHelper
 
   def project_feature_options
     {
-      'Disabled' => ProjectFeature::DISABLED,
-      'Only team members' => ProjectFeature::PRIVATE,
-      'Everyone with access' => ProjectFeature::ENABLED
+      '关闭' => ProjectFeature::DISABLED,
+      '成员可以访问' => ProjectFeature::PRIVATE,
+      '所有人可以访问' => ProjectFeature::ENABLED
     }
   end
 end
