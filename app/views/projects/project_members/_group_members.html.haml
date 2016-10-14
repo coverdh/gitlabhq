@@ -1,11 +1,11 @@
 .panel.panel-default
   .panel-heading
     %strong #{@group.name}
-    group members
+    群组成员
     %span.badge= members.size
     - if can?(current_user, :admin_group_member, @group)
       .controls
-        = link_to 'Manage group members',
+        = link_to '管理群组成员',
                   group_group_members_path(@group),
                   class: 'btn'
   %ul.content-list
