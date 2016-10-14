@@ -4,10 +4,10 @@
 
     .form-group
       = f.label :key, class: 'label-light'
-      = f.text_area :key, class: "form-control", rows: 8, required: true, placeholder: "Don't paste the private part of the SSH key. Paste the public part, which is usually contained in the file '~/.ssh/id_rsa.pub' and begins with 'ssh-rsa'."
+      = f.text_area :key, class: "form-control", rows: 8, required: true, placeholder: "请不要粘贴私钥。只需要粘贴公钥，公钥通常在 '~/.ssh/id_rsa.pub' 并且文件由 'ssh-rsa'."
     .form-group
       = f.label :title, class: 'label-light'
       = f.text_field :title, class: "form-control", required: true
 
     .prepend-top-default
-      = f.submit 'Add key', class: "btn btn-create"
+      = f.submit '添加密匙', class: "btn btn-create"
