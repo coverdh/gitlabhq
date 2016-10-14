@@ -28,21 +28,25 @@
   .row-content-block.second-block
     = form_tag todos_filter_path(without: [:project_id, :author_id, :type, :action_id]), method: :get, class: 'filter-form' do
       .filter-item.inline
-        = select_tag('project_id', todo_projects_options,
-          class: 'select2 trigger-submit', include_blank: true,
-          data: {placeholder: '项目'})
+        - if params[:project_id].present?
+          = hidden_field_tag(:project_id, params[:project_id])
+        = dropdown_tag(project_dropdown_label(params[:project_id], '项目'), options: { toggle_class: 'js-project-search js-filter-submit', title: '通过项目查找', filter: true, filterInput: 'input#project-search', dropdown_class: 'dropdown-menu-selectable dropdown-menu-project js-filter-submit',
+          placeholder: '搜索项目', data: { data: todo_projects_options } })
       .filter-item.inline
-        = users_select_tag(:author_id, selected: params[:author_id],
-          placeholder: '作者', class: 'trigger-submit', any_user: "Any Author", first_user: true, current_user: true)
+        - if params[:author_id].present?
+          = hidden_field_tag(:author_id, params[:author_id])
+        = dropdown_tag(user_dropdown_label(params[:author_id], '作者'), options: { toggle_class: 'js-user-search js-filter-submit js-author-search', title: '通过作者查找', filter: true, filterInput: 'input#author-search', dropdown_class: 'dropdown-menu-user dropdown-menu-selectable dropdown-menu-author js-filter-submit',
+          placeholder: '查找作者', data: { any_user: '任何作者', first_user: (current_user.username if current_user), current_user: true, project_id: (@project.id if @project), selected: params[:author_id], field_name: 'author_id', default_label: 'Author' } })
       .filter-item.inline
-        = select_tag('type', todo_types_options,
-          class: 'select2 trigger-submit', include_blank: true,
-          data: {placeholder: '类型'})
+        - if params[:type].present?
+          = hidden_field_tag(:type, params[:type])
+        = dropdown_tag(todo_types_dropdown_label(params[:type], '类型'), options: { toggle_class: 'js-type-search js-filter-submit', dropdown_class: 'dropdown-menu-selectable dropdown-menu-type js-filter-submit',
+          data: { data: todo_types_options } })
       .filter-item.inline.actions-filter
-        = select_tag('action_id', todo_actions_options,
-          class: 'select2 trigger-submit', include_blank: true,
-          data: {placeholder: '动作'})
-
+        - if params[:action_id].present?
+          = hidden_field_tag(:action_id, params[:action_id])
+        = dropdown_tag(todo_actions_dropdown_label(params[:action_id], '动作'), options: { toggle_class: 'js-action-search js-filter-submit', dropdown_class: 'dropdown-menu-selectable dropdown-menu-action js-filter-submit',
+          data: { data: todo_actions_options }})
       .pull-right
         .dropdown.inline.prepend-left-10
           %button.dropdown-toggle.btn{type: 'button', 'data-toggle' => 'dropdown'}
