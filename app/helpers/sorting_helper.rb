@@ -36,23 +36,23 @@ module SortingHelper
   end
 
   def sort_title_priority
-    'Priority'
+    '优先级'
   end
 
   def sort_title_oldest_updated
-    'Oldest updated'
+    '最旧更新'
   end
 
   def sort_title_recently_updated
-    'Last updated'
+    '最近更新'
   end
 
   def sort_title_oldest_created
-    'Oldest created'
+    '最旧创建'
   end
 
   def sort_title_recently_created
-    'Last created'
+    '最近创建'
   end
 
   def sort_title_milestone_soon
@@ -72,7 +72,7 @@ module SortingHelper
   end
 
   def sort_title_name
-    'Name'
+    '名称'
   end
 
   def sort_title_largest_repo
