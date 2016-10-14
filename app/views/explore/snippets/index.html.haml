@@ -1,5 +1,5 @@
-- page_title    "Snippets"
-- header_title  "Snippets", snippets_path
+- page_title    "代码片段"
+- header_title  "代码片段", snippets_path
 
 - if current_user
   = render 'dashboard/snippets_head'
@@ -13,6 +13,6 @@
         New Snippet
 
   .oneline
-    Public snippets created by you and other users are listed here
+    所有公开的代码片段都将会被罗列在此
 
 = render 'snippets/snippets'
