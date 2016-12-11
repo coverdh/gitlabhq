@@ -7,7 +7,7 @@
     if ((base = w.gl).utils == null) {
       base.utils = {};
     }
-    w.gl.utils.days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    w.gl.utils.days = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
 
     w.gl.utils.formatDate = function(datetime) {
       return dateFormat(datetime, 'mmm d, yyyy h:MMtt Z');
@@ -41,19 +41,19 @@
       shortLocale = {
         prefixAgo: null,
         prefixFromNow: null,
-        suffixAgo: 'ago',
-        suffixFromNow: 'from now',
-        seconds: '1 min',
-        minute: '1 min',
-        minutes: '%d mins',
-        hour: '1 hr',
-        hours: '%d hrs',
-        day: '1 day',
-        days: '%d days',
-        month: '1 month',
-        months: '%d months',
-        year: '1 year',
-        years: '%d years',
+        suffixAgo: '之前',
+        suffixFromNow: '从现在开始',
+        seconds: '1 分钟',
+        minute: '1 分钟',
+        minutes: '%d 分钟',
+        hour: '1 小时',
+        hours: '%d 小时',
+        day: '1 天',
+        days: '%d 天',
+        month: '1 个月',
+        months: '%d 个月',
+        year: '1 年',
+        years: '%d 年',
         wordSeparator: ' ',
         numbers: []
       };

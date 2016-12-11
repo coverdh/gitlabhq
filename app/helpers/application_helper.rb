@@ -187,13 +187,14 @@ module ApplicationHelper
     return if object.updated_at == object.created_at
 
     content_tag :small, class: "edited-text" do
-      output = content_tag(:span, "Edited ")
-      output << time_ago_with_tooltip(object.updated_at, placement: placement, html_class: html_class)
+      output = content_tag(:span, "")
 
       if include_author && object.updated_by && object.updated_by != object.author
-        output << content_tag(:span, " by ")
+        output << content_tag(:span, "由")
         output << link_to_member(object.project, object.updated_by, avatar: false, author_class: nil)
       end
+      output << content_tag(:span, "编辑于")
+      output << time_ago_with_tooltip(object.updated_at, placement: placement, html_class: html_class)
 
       output
     end

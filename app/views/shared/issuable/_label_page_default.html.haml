@@ -1,17 +1,17 @@
-- title = local_assigns.fetch(:title, 'Assign labels')
+- title = local_assigns.fetch(:title, '制定标签')
 - show_create = local_assigns.fetch(:show_create, true)
 - show_footer = local_assigns.fetch(:show_footer, true)
-- filter_placeholder = local_assigns.fetch(:filter_placeholder, 'Search labels')
+- filter_placeholder = local_assigns.fetch(:filter_placeholder, '搜索标签')
 - show_boards_content = local_assigns.fetch(:show_boards_content, false)
 .dropdown-page-one
   = dropdown_title(title)
   - if show_boards_content
     .issue-board-dropdown-content
       %p
-        Each label that exists in your issue tracker can have its own dedicated
-        list. Select a label below to add a list to your Board and it will
-        automatically be populated with issues that have that label. To create
-        a list for a label that doesn't exist yet, simply create the label below.
+      在你的工单中存在的每一个标签都可以有自己的专用列表。
+      请在下面选择一个标签添加一个列表到您的图表，它会自
+      动填充有该标签。创建一个不存在的标签的列表，只需创建下面的标签。
+
   = dropdown_filter(filter_placeholder)
   = dropdown_content
   - if @project && show_footer
@@ -20,11 +20,11 @@
         - if can?(current_user, :admin_label, @project)
           %li
             %a.dropdown-toggle-page{href: "#"}
-              Create new label
+              创建标签
         %li
           = link_to namespace_project_labels_path(@project.namespace, @project), :"data-is-link" => true do
             - if show_create && @project && can?(current_user, :admin_label, @project)
-              Manage labels
+              管理标签
             - else
-              View labels
+              查看标签
   = dropdown_loading

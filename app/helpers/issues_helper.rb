@@ -10,7 +10,7 @@ module IssuesHelper
   # to allow filtering issues by an unassigned User or Milestone
   def unassigned_filter
     # Milestone uses :title, Issue uses :name
-    OpenStruct.new(id: 0, title: 'None (backlog)', name: 'Unassigned')
+    OpenStruct.new(id: 0, title: 'None (backlog)', name: '未指派')
   end
 
   def url_for_issue(issue_iid, project = @project, options = {})

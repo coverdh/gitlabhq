@@ -9,7 +9,7 @@
       this.daySpace = 1;
       this.daySize = 15;
       this.daySizeWithSpace = this.daySize + (this.daySpace * 2);
-      this.monthNames = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+      this.monthNames = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
       this.months = [];
       // Loop through the timestamps to create a group of objects
       // The group of objects will be grouped based on the day of the week they are

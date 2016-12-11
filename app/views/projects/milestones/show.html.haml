@@ -4,11 +4,11 @@
 .detail-page-header
   .status-box{ class: status_box_class(@milestone) }
     - if @milestone.closed?
-      Closed
+      已关闭
     - elsif @milestone.expired?
-      Past due
+      即将到期
     - else
-      Open
+      打开
   %span.identifier
     Milestone ##{@milestone.iid}
   - if @milestone.expires_at

@@ -137,13 +137,13 @@
                 if (showNo) {
                   data.unshift({
                     id: 0,
-                    title: 'No Label'
+                    title: '没有标签'
                   });
                 }
                 if (showAny) {
                   data.unshift({
                     isAny: true,
-                    title: 'Any Label'
+                    title: '任何标签'
                   });
                 }
                 if (data.length > 2) {
