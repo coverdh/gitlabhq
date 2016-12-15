@@ -5,7 +5,7 @@ class Label < ActiveRecord::Base
   # Represents a "No Label" state used for filtering Issues and Merge
   # Requests that have no label assigned.
   LabelStruct = Struct.new(:title, :name)
-  None = LabelStruct.new('无标签', 'No Label')
+  None = LabelStruct.new('没有标签', 'No Label')
   Any = LabelStruct.new('任何标签', '')
 
   DEFAULT_COLOR = '#428BCA'
